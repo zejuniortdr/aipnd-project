@@ -45,15 +45,15 @@ class TrainingArgs(object):
             formatter_class=argparse.ArgumentDefaultsHelpFormatter
         )
 
-        parser.add_argument('data_directory', action="store")
+        parser.add_argument('data_folder', action="store")
 
         parser.add_argument(
-            '--save_dir',
+            '--save_folder',
             action="store",
             default=".",
-            dest='save_dir',
+            dest='data_folder',
             type=str,
-            help='Directory to save training checkpoint file',
+            help='Folder to save training checkpoint file',
         )
 
         parser.add_argument(
