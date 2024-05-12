@@ -8,8 +8,6 @@ __author__ = "Luis Jr <jose.luis@iclinic.com.br>"
 __version__ = "1.0.0"
 __license__ = "MIT"
 
-import argparse
-import json
 import torch
 import warnings
 

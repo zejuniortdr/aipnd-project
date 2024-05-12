@@ -8,8 +8,6 @@ __author__ = "Luis Jr <jose.luis@iclinic.com.br>"
 __version__ = "1.0.0"
 __license__ = "MIT"
 
-import argparse
-import json
 import os
 import sys
 
@@ -149,10 +147,6 @@ class Train(Util):
             print(f"Folder {folder} does not exist. Creating...")
             os.makedirs(folder)
 
-    def load_categories(self):
-        with open(self.cli_args.categories_json, "r") as f:
-            return json.load(f)
-
     def make_model(self):
         if self.is_supported:
             print("Choose VGG or Densenet")
@@ -181,16 +175,6 @@ class Train(Util):
         od["softmax"] = nn.LogSoftmax(dim=1)
 
         return od
-
-    def setup_device(self):
-        device = torch.device("cpu")
-
-        if self.cli_args.use_gpu and torch.cuda.is_available():
-            device = torch.device("cuda:0")
-        else:
-            print("GPU is not available. Using CPU.")
-
-        return device
 
     def send_model_to_device(self):
         print(f"Sending model to device {self.device}.")
