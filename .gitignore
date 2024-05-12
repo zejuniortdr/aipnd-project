@@ -101,3 +101,11 @@ ENV/
 .mypy_cache/
 
 .github/**
+
+
+#Pytorch checkpoints
+*.pth
+*.pth.tar.gz
+
+# Backup
+backup/
