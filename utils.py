@@ -58,7 +58,7 @@ class TrainingArgs(object):
             "--save_folder",
             action="store",
             default=".",
-            dest="data_folder",
+            dest="save_folder",
             type=str,
             help="Folder to save training checkpoint file",
         )

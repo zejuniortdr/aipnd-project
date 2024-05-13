@@ -98,7 +98,7 @@ class Train(BaseClassUtil):
             training_dataset
         )
 
-        self.nn_model = self.make_model(self.cli_args)
+        self.nn_model = self.make_model()
 
         input_size = 0
 
