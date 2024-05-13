@@ -109,3 +109,6 @@ ENV/
 
 # Backup
 backup/
+
+# Images Folder
+flowers
