@@ -15,10 +15,10 @@ from PIL import Image
 from torchvision import models
 from torchvision import transforms
 
-from utils import PredictArgs, Util
+from utils import BaseClassUtil, PredictArgs
 
 
-class Predict(Util):
+class Predict(BaseClassUtil):
     def __init__(self):
         predict_args = PredictArgs()
         parser = predict_args.get_args()

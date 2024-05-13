@@ -19,10 +19,10 @@ from torch import nn, optim
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 
-from utils import TrainingArgs, Util
+from utils import BaseClassUtil, TrainingArgs
 
 
-class Train(Util):
+class Train(BaseClassUtil):
 
     def __init__(self):
         # ARGS

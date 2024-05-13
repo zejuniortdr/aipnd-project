@@ -13,7 +13,7 @@ import json
 import torch
 
 
-class Util(object):
+class BaseClassUtil(object):
     def setup_device(self):
         device = torch.device("cpu")
 
