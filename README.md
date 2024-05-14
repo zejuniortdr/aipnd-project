@@ -2,14 +2,30 @@
 
 Project code for Udacity's AI Programming with Python Nanodegree program. In this project, students first develop code for an image classifier built with PyTorch, then convert it into a command line application.
 
-# Setup
+# Requirements
+- pipenv or conda
 
-1. How to get flowers image folder provided by Udacity:
+
+# Setup
+## 1. Create env with depedencies:
+```bash
+make setup
+```
+This command will install numpy, pandas, torch, torchvision and jupyter using Pipenv
+
+
+Alternative using Conda, run:
+```
+conda create -n myenv numpy pandas torch torchvision jupyter
+```
+
+
+## 2. How to get flowers image folder provided by Udacity:
 
 Image categories are found in cat_to_name.json and flower images can be downloaded in the gziped tar file flower_data.tar.gz.
 
 ```bash
-make setup
+make get_data
 ```
 
 This command only automates the download and extraction of flowers data (provided by Udacity) to a flower folder on this project using two commands to do so:
@@ -40,9 +56,9 @@ aipnd-project/
 │   └───valid/
 ```
 
+# Executing
 
-
-## How to train (train.py)
+## 1. How to train (train.py)
 
 Use the help command to see all supported parameters:
 ```bash
@@ -64,7 +80,7 @@ Additional hidden layers with checkpoint saved to densenet201 folder.
 python ./train.py ./flowers/train --gpu --arch=densenet201 --hidden_units 1280 640 --save_folder densenet201
 ```
 
-## How to predict (predict.py)
+## 2. How to predict (predict.py)
 
 Use the help command to see all supported parameters:
 ```bash
@@ -78,7 +94,7 @@ python ./predict.py flowers/valid/1/image_06739.jpg checkpoint.pth
 
 Prediction with Top 10 Probabilities
 ```bash
-python ./predict.py flowers/valid/1/image_06739.jpg checkpoint.pth --tok_k 10
+python ./predict.py flowers/valid/1/image_06739.jpg checkpoint.pth --top_k 10
 ```
 
 Prediction using GPU
@@ -86,7 +102,7 @@ Prediction using GPU
 python ./predict.py flowers/valid/1/image_06739.jpg checkpoint.pth --gpu
 ```
 
-## Part 1 Development Notebook
+# Part 1 Development Notebook
 
 ### Image Classifier Project.ipynb
 

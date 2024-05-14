@@ -67,9 +67,9 @@ class Train(BaseClassUtil):
                 ]
             )
 
-    def get_training_dataloader(self, training_dataset):
+    def get_training_dataloader(self):
         return DataLoader(
-            training_dataset,
+            self.training_dataset,
             batch_size=self.batch_size,
             shuffle=True
         )
@@ -89,14 +89,12 @@ class Train(BaseClassUtil):
 
         training_transforms = self.setup_transforms()
 
-        training_dataset = datasets.ImageFolder(
+        self.training_dataset = datasets.ImageFolder(
             self.cli_args.data_folder,
             transform=training_transforms
         )
 
-        self.training_dataloader = self.get_training_dataloader(
-            training_dataset
-        )
+        self.training_dataloader = self.get_training_dataloader()
 
         self.nn_model = self.make_model()
 

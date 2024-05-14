@@ -132,7 +132,7 @@ class TrainingArgs(object):
 
 
 class PredictArgs(object):
-    def get_args():
+    def get_args(self):
         parser = argparse.ArgumentParser(
             description="Image prediction.",
             usage="python ./predict.py /path/to/image.jpg checkpoint.pth",

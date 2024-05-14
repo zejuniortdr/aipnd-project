@@ -35,14 +35,13 @@ class Predict(BaseClassUtil):
         """
 
         # Start with CPU
-        device = self.setup_device()
+        self.device = self.setup_device()
 
         # load categories
-        self.load_categories()
+        self.cat_to_name = self.load_categories()
 
         # load model
         self.chkp_model = self.load_checkpoint(
-            device,
             self.cli_args.checkpoint_file
         )
 
@@ -80,7 +79,7 @@ class Predict(BaseClassUtil):
 
         return top_prob.numpy()[0], mapped_classes
 
-    def load_checkpoint(self, device, file="checkpoint.pth"):
+    def load_checkpoint(self, file="checkpoint.pth"):
         """
         Loads model checkpoint saved by train.py
         """
@@ -90,7 +89,7 @@ class Predict(BaseClassUtil):
         )
 
         model = models.__dict__[model_state["arch"]](pretrained=True)
-        model = model.to(device)
+        model = model.to(self.device)
 
         model.classifier = model_state["classifier"]
         model.load_state_dict(model_state["state_dict"])
