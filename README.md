@@ -115,8 +115,8 @@ This command only automates Jupyter Noobook initialization using the command: `j
 
 
 #### Files
-- [x] Image Classifier Project.html
-- [x] Image Classifier Project.ipynb
+- [x] [Image Classifier Project.html](https://github.com/zejuniortdr/aipnd-project/blob/master/Image%20Classifier%20Project.html)
+- [x] [Image Classifier Project.ipynb](https://github.com/zejuniortdr/aipnd-project/blob/master/Image%20Classifier%20Project.ipynb)
 
 
 ## Part 2 Scripts
